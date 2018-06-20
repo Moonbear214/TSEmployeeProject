@@ -20,7 +20,10 @@ namespace TSEmployeeProject.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+
+            string dbPath = FileAccessHelper.GetLocalFilePath("tsemployees.db3");
+
+            LoadApplication(new App(dbPath));
         }
     }
 }

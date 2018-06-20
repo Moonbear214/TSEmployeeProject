@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TSEmployeeProject.Controls;
 using Xamarin.Forms;
 
 namespace TSEmployeeProject
@@ -12,6 +13,11 @@ namespace TSEmployeeProject
 		public MainPage()
 		{
 			InitializeComponent();
-		}
-	}
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DependencyService.Get<IMessage>().ShortAlert("Test Success");
+        }
+    }
 }
