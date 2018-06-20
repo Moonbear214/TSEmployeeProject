@@ -2,17 +2,38 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using TSEmployeeProject.Factories;
+using TSEmployeeProject.Pages;
+
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace TSEmployeeProject
 {
 	public partial class App : Application
-	{
-		public App (string dbPath)
+    {
+        // Creates a static datafactory here that can be referenced through entire app.
+        // App.dataFactory...
+        public static DataFactory dataFactory;
+
+        public App (string dbPath)
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+            dataFactory = new DataFactory(dbPath);
+
+            LoggedInCheck();
 		}
+
+        /// <summary>
+        /// Checks if a user is saved in local storage and logs the user in if true,
+        /// diverts to login page if false.
+        /// </summary>
+        private async void LoggedInCheck()
+        {
+            if (await dataFactory.LoggedInCheck())
+                MainPage = new MainPage();
+            else
+                MainPage = new MainPage();
+        }
 
 		protected override void OnStart ()
 		{

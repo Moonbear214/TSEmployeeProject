@@ -9,7 +9,7 @@ namespace TSEmployeeProject.Models
     public partial class EmployeeNextOfKin
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -27,6 +27,6 @@ namespace TSEmployeeProject.Models
         public string PhysicalAddress { get; set; }
 
         [JsonProperty("employee")]
-        public long Employee { get; set; }
+        public int Employee { get; set; }
     }
 }

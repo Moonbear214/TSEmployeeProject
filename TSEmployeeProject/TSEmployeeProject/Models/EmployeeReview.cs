@@ -9,7 +9,7 @@ namespace TSEmployeeProject.Models
     public partial class EmployeeReview
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("date")]
         public DateTimeOffset Date { get; set; }

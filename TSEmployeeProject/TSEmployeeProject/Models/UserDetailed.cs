@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
 using Newtonsoft.Json;
 
 namespace TSEmployeeProject.Models
 {
+    [Table("UserDetailed")]
     public partial class UserDetailed
     {
-        [JsonProperty("id")]
-        public long Id { get; set; }
+        [PrimaryKey, JsonProperty("id")]
+        public int Id { get; set; }
 
         [JsonProperty("user")]
         public User User { get; set; }
@@ -72,16 +74,16 @@ namespace TSEmployeeProject.Models
         public string Race { get; set; }
 
         [JsonProperty("years_worked")]
-        public long YearsWorked { get; set; }
+        public int YearsWorked { get; set; }
 
         [JsonProperty("age")]
-        public long Age { get; set; }
+        public int Age { get; set; }
 
         [JsonProperty("next_review")]
         public DateTimeOffset NextReview { get; set; }
 
         [JsonProperty("days_to_birthday")]
-        public long DaysToBirthday { get; set; }
+        public int DaysToBirthday { get; set; }
 
         [JsonProperty("leave_remaining")]
         public string LeaveRemaining { get; set; }

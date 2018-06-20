@@ -33,12 +33,12 @@ namespace TSEmployeeProject.Models
         public string Race { get; set; }
 
         [JsonProperty("years_worked")]
-        public long YearsWorked { get; set; }
+        public int YearsWorked { get; set; }
 
         [JsonProperty("age")]
-        public long Age { get; set; }
+        public int Age { get; set; }
 
         [JsonProperty("days_to_birthday")]
-        public long DaysToBirthday { get; set; }
+        public int DaysToBirthday { get; set; }
     }
 }

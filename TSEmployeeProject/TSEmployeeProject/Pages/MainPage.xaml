@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TSEmployeeProject"
-             x:Class="TSEmployeeProject.MainPage">
+             x:Class="TSEmployeeProject.Pages.MainPage">
 
     <StackLayout>
         <!-- Place new controls here -->
