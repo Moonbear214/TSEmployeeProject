@@ -15,17 +15,15 @@ namespace TSEmployeeProject.Factories
     {
         HttpClient httpClient;
         const string url = "http://staging.tangent.tngnt.co/api/";
+        public string authorizationKey; //= "token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678";
 
         public APIFactory()
+        { }
+
+        public void SetClient(string authKey)
         {
             httpClient = new HttpClient();
-        }
-
-        private HttpClient GetClient(string authKey)
-        {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Authorization", authKey);
-            return client;
+            httpClient.DefaultRequestHeaders.Add("Authorization", authKey);
         }
 
         /// <summary>
@@ -55,6 +53,32 @@ namespace TSEmployeeProject.Factories
             {
                 return loginDetails;
             }
+        }
+
+        /// <summary>
+        /// Returns a list of all the employees and their details
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Employee>> GetEmployeeList()
+        {
+            var result = await httpClient.GetStringAsync(url + "employee/");
+
+            List<Employee> employees = JsonConvert.DeserializeObject<List<Employee>>(result);
+
+            return employees;
+        }
+
+        /// <summary>
+        /// Returns a detailed class of the current user with all the information they can view about themselves
+        /// </summary>
+        /// <returns></returns>
+        public async Task<UserDetailed> GetCurrentUser()
+        {
+            var result = await httpClient.GetStringAsync(url + "employee/me/");
+
+            UserDetailed currentUser = JsonConvert.DeserializeObject<UserDetailed>(result);
+
+            return currentUser;
         }
     }
 }

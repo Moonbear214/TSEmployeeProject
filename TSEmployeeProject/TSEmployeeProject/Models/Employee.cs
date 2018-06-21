@@ -41,4 +41,9 @@ namespace TSEmployeeProject.Models
         [JsonProperty("days_to_birthday")]
         public int DaysToBirthday { get; set; }
     }
+
+    public class EmployeeList
+    {
+        public List<Employee> Employees { get; set; }
+    }
 }

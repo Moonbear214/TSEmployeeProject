@@ -168,4 +168,7 @@
       <Name>TSEmployeeProject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bars.png" />
+  </ItemGroup>
 </Project>

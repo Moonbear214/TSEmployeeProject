@@ -33,15 +33,14 @@ namespace TSEmployeeProject.Pages
         {
             this.IsBusy = true;
             if (await App.dataFactory.LoggedInCheck())
-                App.Current.MainPage = new NavigationPage(new MainPage());
+                Application.Current.MainPage = new MainPage.MainPage();
             this.IsBusy = false;
         }
 
         private async void LoginUser(object sender, EventArgs e)
         {
-            if (await App.dataFactory.UserLogin((LoginDetails)this.BindingContext))
-                App.Current.MainPage = new NavigationPage(new MainPage());
-            //await Navigation.PushAsync(new MainPage());
+            if (await App.dataFactory.LoginUser((LoginDetails)this.BindingContext))
+                Application.Current.MainPage = new MainPage.MainPage();
             else
                 DependencyService.Get<IMessage>().ShortAlert("Wrong Credentials");
         }

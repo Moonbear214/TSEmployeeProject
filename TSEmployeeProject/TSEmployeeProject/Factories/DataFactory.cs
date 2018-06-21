@@ -16,7 +16,7 @@ namespace TSEmployeeProject.Factories
         APIFactory apiFactory;
         LocalStorageRepository localStorageRepo;
 
-        private string authorizationKey; //= "token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678";
+        //private string authorizationKey; //= "token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678";
 
         public DataFactory(string dbPath)
         {
@@ -36,7 +36,7 @@ namespace TSEmployeeProject.Factories
             {
                 if (!string.IsNullOrWhiteSpace(loginDetails.AuthToken))
                 {
-                    authorizationKey = loginDetails.AuthToken;
+                    apiFactory.SetClient(loginDetails.AuthToken);
                     return true;
                 }
                 else
@@ -54,19 +54,28 @@ namespace TSEmployeeProject.Factories
         /// </summary>
         /// <param name="loginDetails"></param>
         /// <returns></returns>
-        public async Task<bool> UserLogin(LoginDetails loginDetails)
+        public async Task<bool> LoginUser(LoginDetails loginDetails)
         {
             await apiFactory.LoginUser(loginDetails);
             
             if (!string.IsNullOrWhiteSpace(loginDetails.AuthToken))
             {
                 await localStorageRepo.SaveLoginDetails(loginDetails);
-                authorizationKey = loginDetails.AuthToken;
+                apiFactory.SetClient(loginDetails.AuthToken);
 
                 return true;
             }
             else
                 return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Employee>> GetEmployeeList()
+        {
+            return await apiFactory.GetEmployeeList();
         }
     }
 }

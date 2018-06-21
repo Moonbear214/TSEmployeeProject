@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 
 using TSEmployeeProject.Factories;
 using TSEmployeeProject.Pages;
+using TSEmployeeProject.Pages.MainPage;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace TSEmployeeProject
