@@ -15,17 +15,16 @@ namespace TSEmployeeProject.Factories
         public LocalStorageRepository(string dbPath)
         {
             conn = new SQLiteAsyncConnection(dbPath);
-
-            CreateLoginTable();
+            CreateAllTables();
         }
 
         /// <summary>
         /// Creates the tables in local storage for login details //and the logged in user//
         /// </summary>
-        private void CreateLoginTable()
+        public async void CreateAllTables()
         {
-            conn.CreateTableAsync<LoginDetails>().Wait();
-            //conn.CreateTableAsync<UserDetailed>().Wait();
+            await conn.CreateTableAsync<LoginDetails>();
+            //await conn.CreateTableAsync<UserDetailed>();
         }
 
 

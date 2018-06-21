@@ -20,20 +20,8 @@ namespace TSEmployeeProject
 
             dataFactory = new DataFactory(dbPath);
 
-            LoggedInCheck();
+            MainPage = new LoginPage();
 		}
-
-        /// <summary>
-        /// Checks if a user is saved in local storage and logs the user in if true,
-        /// diverts to login page if false.
-        /// </summary>
-        private async void LoggedInCheck()
-        {
-            if (await dataFactory.LoggedInCheck())
-                MainPage = new MainPage();
-            else
-                MainPage = new MainPage();
-        }
 
 		protected override void OnStart ()
 		{
