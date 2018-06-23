@@ -11,88 +11,89 @@
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10, 0">
 
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,5,0,0">
-                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" Text="Personal Details" />
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" FontAttributes="Bold" Text="Personal Details" />
                         <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="10,-3,10,0" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Username" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Username" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding User.Username}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Full Name" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Full Name" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding User.FullNameDisplay}" />
                     </StackLayout>
                     <StackLayout x:Name="stkIdNumber" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="ID Number" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="ID Number" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding IdNumber}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="BirthDate" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="BirthDate" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding BirthDate, StringFormat='{0:dd/MM/yyyy}'}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Gender" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Gender" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding GenderDisplay}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Race" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Race" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding RaceDisplay}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Age" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Age" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Age}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Is Foreigner" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Is Foreigner" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding IsForeigner}" />
                     </StackLayout>
                     <StackLayout x:Name="stkVisaDoc" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Visa Document" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Visa Document" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding VisaDocument}" />
                     </StackLayout>
 
+                    
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,5,0,0">
-                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" Text="Professional Details" />
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" FontAttributes="Bold" Text="Professional Details" />
                         <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="10,-3,10,0" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Position" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Position" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Position.Name}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Level" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Level" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Position.Level}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Github Username" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Github Username" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding GithubUser}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Start Date" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Start Date" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding StartDate, StringFormat='{0:dd/MM/yyyy}'}" />
                     </StackLayout>
                     <StackLayout x:Name="stkEndDate" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="EndDate" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="EndDate" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding EndDate, StringFormat='{0:dd/MM/yyyy}'}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Tax Number" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Tax Number" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding TaxNumber}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Is Employed" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Is Employed" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding IsEmployed}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Years Worked" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Years Worked" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding YearsWorked}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Leave Remaining" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Leave Remaining" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding LeaveRemaining}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Next Review" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Next Review" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding NextReview, StringFormat='{0:dd/MM/yyyy}'}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -100,31 +101,33 @@
                     </StackLayout>
                     <Picker x:Name="pckReviewPicker" Title="Employee reviews" SelectedIndexChanged="ReviewPicked" IsVisible="False" ItemsSource="{Binding EmployeeReview}" ItemDisplayBinding="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" />
 
+                    
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,5,0,0">
-                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" Text="Contact Details" />
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" FontAttributes="Bold" Text="Contact Details" />
                         <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="10,-3,10,0" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Email" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Email" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Email}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Personal Email" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Personal Email" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding PersonalEmail}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Phone Number" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Phone Number" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding PhoneNumber}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Physical Address" />
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Physical Address" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding PhysicalAddress}" />
                     </StackLayout>
 
+                    
                     <!--A Listview that will display all the next of kin details of the user
                     (Listview is disabled to disable it's scrolling, allowing only the whole page to be scrolled)-->
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="0,5,0,0">
-                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" Text="Next Of Kin" />
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="End" TextColor="SeaGreen" FontSize="Medium" FontAttributes="Bold" Text="Next Of Kin" />
                         <BoxView BackgroundColor="LightGray" HeightRequest="1" Margin="10,-3,10,0" />
                     </StackLayout>
                     <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowHeight="330" ItemsSource="{Binding EmployeeNextOfKin}" IsEnabled="False">
@@ -133,23 +136,23 @@
                                 <ViewCell>
                                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Name" />
+                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Name" TextColor="MediumSeaGreen" />
                                             <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Name}" />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Relationship" />
+                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Relationship" TextColor="MediumSeaGreen" />
                                             <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Relationship}" />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Phone Number" />
+                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Phone Number" TextColor="MediumSeaGreen" />
                                             <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding PhoneNumber}" />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Email" />
+                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Email" TextColor="MediumSeaGreen" />
                                             <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Email}" />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Physical Address" />
+                                            <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Physical Address" TextColor="MediumSeaGreen" />
                                             <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding PhysicalAddress}" />
                                         </StackLayout>
                                     </StackLayout>

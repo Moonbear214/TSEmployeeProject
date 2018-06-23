@@ -18,7 +18,7 @@ namespace TSEmployeeProject.Pages
 		{
 			InitializeComponent ();
 
-            stkIdNumber.IsVisible = user.IsForeigner;
+            stkIdNumber.IsVisible = !user.IsForeigner;
             stkVisaDoc.IsVisible = user.IsForeigner;
             stkEndDate.IsVisible = (user.EndDate == null) ? false : true;
 

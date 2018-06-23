@@ -23,12 +23,23 @@ namespace TSEmployeeProject.Pages.MainPage
 
         async void PageSetup()
         {
+            IsBusy = true;
+
             EmployeeList employees = new EmployeeList
             {
                 Employees = await App.dataFactory.GetEmployeeList()
             };
 
             BindingContext = employees;
+
+            IsBusy = false;
+        }
+
+        private async void ViewEmployee(object sender, SelectedItemChangedEventArgs e)
+        {
+            Employee employee = ((ListView)sender).SelectedItem as Employee;
+
+            await Navigation.PushModalAsync(new EmployeeViewPage(employee));
         }
     }
 }

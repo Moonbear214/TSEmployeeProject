@@ -4,13 +4,13 @@
              x:Class="TSEmployeeProject.Pages.MainPage.MainPageDetail"
              Title="Employees">
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
-        <ListView HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" ItemsSource="{Binding Employees}">
+        <ListView HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" ItemsSource="{Binding Employees}" ItemSelected="ViewEmployee">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="ForestGreen" Text="{Binding Email}" />
+                                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="ForestGreen" Text="{Binding User.Username}" />
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
