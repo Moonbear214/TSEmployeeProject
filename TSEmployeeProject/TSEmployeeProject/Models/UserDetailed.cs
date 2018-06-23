@@ -20,10 +20,10 @@ namespace TSEmployeeProject.Models
         public Position Position { get; set; }
 
         [JsonProperty("employee_next_of_kin")]
-        public EmployeeNextOfKin[] EmployeeNextOfKin { get; set; }
+        public List<EmployeeNextOfKin> EmployeeNextOfKin { get; set; }
 
         [JsonProperty("employee_review")]
-        public EmployeeReview[] EmployeeReview { get; set; }
+        public List<EmployeeReview> EmployeeReview { get; set; }
 
         [JsonProperty("id_number")]
         public string IdNumber { get; set; }
@@ -69,9 +69,60 @@ namespace TSEmployeeProject.Models
 
         [JsonProperty("gender")]
         public string Gender { get; set; }
+        
+        [Ignore, JsonIgnore]
+        public String GenderDisplay
+        {
+            get
+            {
+                String Value = null;
+
+                switch (this.Gender)
+                {
+                    case "M":
+                        Value = "Male";
+                        break;
+                    case "F":
+                        Value = "Female";
+                        break;
+                }
+
+                return Value;
+            }
+        }
 
         [JsonProperty("race")]
         public string Race { get; set; }
+
+        [Ignore, JsonIgnore]
+        public string RaceDisplay
+        {
+            get
+            {
+                String Value = null;
+
+                switch (this.Race)
+                {
+                    case "B":
+                        Value = "Black African";
+                        break;
+                    case "C":
+                        Value = "Coloured";
+                        break;
+                    case "I":
+                        Value = "Indian or Asian";
+                        break;
+                    case "W":
+                        Value = "White";
+                        break;
+                    case "N":
+                        Value = "None Document";
+                        break;
+                }
+
+                return Value;
+            }
+        }
 
         [JsonProperty("years_worked")]
         public int YearsWorked { get; set; }

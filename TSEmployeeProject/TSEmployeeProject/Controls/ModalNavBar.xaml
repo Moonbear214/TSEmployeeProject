@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TSEmployeeProject.Controls.ModalNavBar"
+             x:Name="this"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="Start"
+             BackgroundColor="AliceBlue">
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5">
+        <StackLayout.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS">0,30,0,0</On>
+            </OnPlatform>
+        </StackLayout.Margin>
+        <Button x:Name="btnCloseModal" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" WidthRequest="50" Style="{StaticResource FontAwesomeSolid}" Text="&#xf060;" />
+        <Label x:Name="lblTitle" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="-50,0,0,0" FontSize="Medium" FontAttributes="Bold" />
+    </StackLayout>
+    
+</StackLayout>

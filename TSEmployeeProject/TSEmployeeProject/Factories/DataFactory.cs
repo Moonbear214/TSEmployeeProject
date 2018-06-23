@@ -54,7 +54,7 @@ namespace TSEmployeeProject.Factories
         /// </summary>
         /// <param name="loginDetails"></param>
         /// <returns></returns>
-        public async Task<bool> LoginUser(LoginDetails loginDetails)
+        public async Task<bool> UserLogin(LoginDetails loginDetails)
         {
             await apiFactory.LoginUser(loginDetails);
             
@@ -76,6 +76,11 @@ namespace TSEmployeeProject.Factories
         public async Task<List<Employee>> GetEmployeeList()
         {
             return await apiFactory.GetEmployeeList();
+        }
+
+        public async Task<UserDetailed> GetCurrentUser()
+        {
+            return await apiFactory.GetCurrentUser();
         }
     }
 }

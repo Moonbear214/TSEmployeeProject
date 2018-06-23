@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+using SQLite;
 using Newtonsoft.Json;
 
 namespace TSEmployeeProject.Models
@@ -19,5 +20,32 @@ namespace TSEmployeeProject.Models
 
         [JsonProperty("type")]
         public string Type { get; set; }
+
+        [Ignore, JsonIgnore]
+        public string TypeDisplay
+        {
+            get
+            {
+                String Value = null;
+
+                switch (this.Type)
+                {
+                    case "P":
+                        Value = "Performance Increase";
+                        break;
+                    case "S":
+                        Value = "Starting Salary";
+                        break;
+                    case "A":
+                        Value = "Annual Increase";
+                        break;
+                    case "E":
+                        Value = "Expectation Review";
+                        break;
+                }
+
+                return Value;
+            }
+        }
     }
 }

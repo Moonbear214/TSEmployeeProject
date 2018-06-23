@@ -39,7 +39,7 @@ namespace TSEmployeeProject.Pages
 
         private async void LoginUser(object sender, EventArgs e)
         {
-            if (await App.dataFactory.LoginUser((LoginDetails)this.BindingContext))
+            if (await App.dataFactory.UserLogin((LoginDetails)this.BindingContext))
                 Application.Current.MainPage = new MainPage.MainPage();
             else
                 DependencyService.Get<IMessage>().ShortAlert("Wrong Credentials");

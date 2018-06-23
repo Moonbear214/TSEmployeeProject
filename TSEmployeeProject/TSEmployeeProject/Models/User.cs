@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Newtonsoft.Json;
+using SQLite;
 
 namespace TSEmployeeProject.Models
 {
@@ -23,6 +24,14 @@ namespace TSEmployeeProject.Models
         [JsonProperty("last_name")]
         public string LastName { get; set; }
 
+        [Ignore, JsonIgnore]
+        public string FullNameDisplay
+        {
+            get
+            {
+                return string.Format(this.FirstName, this.LastName, "{0} {1}");
+            }
+        }
         [JsonProperty("is_active")]
         public bool IsActive { get; set; }
 
