@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-using SQLite;
 using Newtonsoft.Json;
 
 namespace TSEmployeeProject.Models
 {
-    [Table("UserDetailed")]
     public partial class UserDetailed
     {
-        [PrimaryKey, JsonProperty("id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
         [JsonProperty("user")]
@@ -70,7 +68,7 @@ namespace TSEmployeeProject.Models
         [JsonProperty("gender")]
         public string Gender { get; set; }
         
-        [Ignore, JsonIgnore]
+        [JsonIgnore]
         public String GenderDisplay
         {
             get
@@ -94,7 +92,7 @@ namespace TSEmployeeProject.Models
         [JsonProperty("race")]
         public string Race { get; set; }
 
-        [Ignore, JsonIgnore]
+        [JsonIgnore]
         public string RaceDisplay
         {
             get

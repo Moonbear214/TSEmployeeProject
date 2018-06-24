@@ -29,8 +29,7 @@ namespace TSEmployeeProject.Models
         {
             get
             {
-                //return string.Format(this.FirstName, this.LastName, "{0} {1}");
-                return this.FirstName + " " + this.LastName;
+                return string.Format("{0} {1}", this.FirstName, this.LastName);
             }
         }
         [JsonProperty("is_active")]

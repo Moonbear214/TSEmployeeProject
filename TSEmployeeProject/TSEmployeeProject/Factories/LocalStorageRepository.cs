@@ -15,20 +15,19 @@ namespace TSEmployeeProject.Factories
         public LocalStorageRepository(string dbPath)
         {
             conn = new SQLiteAsyncConnection(dbPath);
-            CreateAllTables();
+            conn.CreateTableAsync<LoginDetails>().Wait();
         }
 
         /// <summary>
-        /// Creates the tables in local storage for login details //and the logged in user//
+        /// Creates the tables in local storage for login details
         /// </summary>
         public async void CreateAllTables()
         {
             await conn.CreateTableAsync<LoginDetails>();
-            //await conn.CreateTableAsync<UserDetailed>();
         }
 
 
-        //Methods for adding data to local storage for all classes (Login, UserDetailed)
+        //Methods for adding data to local storage for all classes (Login)
         //========================================================================================================================================================================
 
         //Login
@@ -49,7 +48,7 @@ namespace TSEmployeeProject.Factories
         //========================================================================================================================================================================
 
 
-        //Methods for returning all local storage data for given class (Login, UserDetailed)
+        //Methods for returning all local storage data for given class (Login)
         //========================================================================================================================================================================
 
         //Login
@@ -74,7 +73,6 @@ namespace TSEmployeeProject.Factories
         public async void ClearLocalStorage()
         {
             await conn.ExecuteAsync("DELETE FROM LoginDetails");
-            //await conn.ExecuteAsync("DELETE FROM UserDetailed");
         }
         //========================================================================================================================================================================
     }

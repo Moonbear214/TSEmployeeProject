@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 using TSEmployeeProject.Factories;
 using TSEmployeeProject.Pages;
 using TSEmployeeProject.Pages.MainPage;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace TSEmployeeProject
@@ -13,7 +14,7 @@ namespace TSEmployeeProject
     {
         // Creates a static datafactory here that can be referenced through entire app.
         // App.dataFactory...
-        public static DataFactory dataFactory;
+        public static DataFactory dataFactory { get; private set; }
 
         public App (string dbPath)
 		{
@@ -21,8 +22,22 @@ namespace TSEmployeeProject
 
             dataFactory = new DataFactory(dbPath);
 
-            MainPage = new LoginPage();
+            if (CheckLogin())
+                MainPage = new MainPage();
+            else
+                MainPage = new LoginPage();
+
+            //CheckLogin();
 		}
+
+        public bool CheckLogin()
+        {
+            Task<bool> task = Task.Run<bool>(async () => await dataFactory.LoggedInCheck());
+            if (task.Result)
+                return true;
+            else
+                return false;
+        }
 
 		protected override void OnStart ()
 		{

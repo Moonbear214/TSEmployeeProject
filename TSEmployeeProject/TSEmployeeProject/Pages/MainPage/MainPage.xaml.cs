@@ -8,12 +8,15 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using TSEmployeeProject.Models;
+using Acr.UserDialogs;
 
 namespace TSEmployeeProject.Pages.MainPage
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
+        UserDetailed user;
+
         public MainPage()
         {
             InitializeComponent();
@@ -25,21 +28,25 @@ namespace TSEmployeeProject.Pages.MainPage
             var item = e.SelectedItem as MainPageMenuItem;
             if (item == null)
                 return;
-
-            //var page = (Page)Activator.CreateInstance(item.TargetType);
-            //page.Title = item.Title;
-
-            //Detail = new NavigationPage(page);
-            //IsPresented = false;
-
-            //var page = (Page)Activator.CreateInstance(item.TargetType);
-            //page.Title = item.Title;
             
-            UserDetailed user = await App.dataFactory.GetCurrentUser();
-            //UserDetailed user = new UserDetailed();
+            if (item.Id == 0)
+            {
+                if (user == null)
+                {
+                    using (UserDialogs.Instance.Loading(null, null, null, true, MaskType.Black))
+                    {
+                        user = await App.dataFactory.GetCurrentUser();
+                    }
+                }
 
-            await Navigation.PushModalAsync(new UserDetailsPage(user));
+                await Navigation.PushModalAsync(new UserDetailsPage(user));
+            }
+            else if (item.Id == 1)
+            {
+                await Navigation.PushModalAsync(new EmployeeStats());
+            }
 
+            IsPresented = false;
             MasterPage.ListView.SelectedItem = null;
         }
     }

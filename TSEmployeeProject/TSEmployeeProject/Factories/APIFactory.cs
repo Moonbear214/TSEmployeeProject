@@ -16,14 +16,17 @@ namespace TSEmployeeProject.Factories
         HttpClient httpClient;
         const string url = "http://staging.tangent.tngnt.co/api/";
         public string authorizationKey; //= "token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678";
-
-        public APIFactory()
-        { }
-
+        
         public void SetClient(string authKey)
         {
             httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Authorization", authKey);
+        }
+
+        public void ResetClient()
+        {
+            httpClient = new HttpClient();
+            authorizationKey = "";
         }
 
         /// <summary>
@@ -55,6 +58,7 @@ namespace TSEmployeeProject.Factories
             }
         }
 
+
         /// <summary>
         /// Returns a list of all the employees and their details
         /// </summary>
@@ -67,6 +71,7 @@ namespace TSEmployeeProject.Factories
 
             return employees;
         }
+
 
         /// <summary>
         /// Returns a detailed class of the current user with all the information they can view about themselves

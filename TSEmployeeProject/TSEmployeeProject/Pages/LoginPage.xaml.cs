@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using TSEmployeeProject.Models;
 using TSEmployeeProject.Controls;
+using Acr.UserDialogs;
 
 namespace TSEmployeeProject.Pages
 {
@@ -22,27 +23,17 @@ namespace TSEmployeeProject.Pages
             InitializeComponent();
 
             this.BindingContext = loginDetails;
-
-            LoggedInCheck();
-        }
-
-        /// <summary>
-        /// Checks if a user is saved in local storage and navigates to the main page if true
-        /// </summary>
-        private async void LoggedInCheck()
-        {
-            this.IsBusy = true;
-            if (await App.dataFactory.LoggedInCheck())
-                Application.Current.MainPage = new MainPage.MainPage();
-            this.IsBusy = false;
         }
 
         private async void LoginUser(object sender, EventArgs e)
         {
-            if (await App.dataFactory.UserLogin((LoginDetails)this.BindingContext))
-                Application.Current.MainPage = new MainPage.MainPage();
-            else
-                DependencyService.Get<IMessage>().ShortAlert("Wrong Credentials");
+            using (UserDialogs.Instance.Loading(null, null, null, true, MaskType.Black))
+            {
+                if (await App.dataFactory.UserLogin((LoginDetails)this.BindingContext))
+                    Application.Current.MainPage = new MainPage.MainPage();
+                else
+                    DependencyService.Get<IMessage>().ShortAlert("Wrong Credentials");
+            }
         }
     }
 }

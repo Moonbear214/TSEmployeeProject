@@ -13,16 +13,15 @@ namespace TSEmployeeProject.Factories
 {
     public class DataFactory
     {
-        APIFactory apiFactory;
-        LocalStorageRepository localStorageRepo;
-
-        //private string authorizationKey; //= "token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678";
-
+        private LocalStorageRepository localStorageRepo;
+        private APIFactory apiFactory;
+        
         public DataFactory(string dbPath)
         {
-            apiFactory = new APIFactory();
             localStorageRepo = new LocalStorageRepository(dbPath);
+            apiFactory = new APIFactory();
         }
+
 
         /// <summary>
         /// Checks if the user is logged in when the app starts up
@@ -49,6 +48,7 @@ namespace TSEmployeeProject.Factories
                 return false;
         }
 
+
         /// <summary>
         /// Sends username and password to be authenticated and returns true if valid
         /// </summary>
@@ -69,6 +69,7 @@ namespace TSEmployeeProject.Factories
                 return false;
         }
 
+
         /// <summary>
         /// 
         /// </summary>
@@ -78,9 +79,24 @@ namespace TSEmployeeProject.Factories
             return await apiFactory.GetEmployeeList();
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<UserDetailed> GetCurrentUser()
         {
             return await apiFactory.GetCurrentUser();
+        }
+        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ResetLocalStorage()
+        {
+            localStorageRepo.ClearLocalStorage();
+            apiFactory.ResetClient();
         }
     }
 }

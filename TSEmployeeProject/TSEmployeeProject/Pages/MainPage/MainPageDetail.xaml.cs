@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Acr.UserDialogs;
 
 using TSEmployeeProject.Models;
 
@@ -14,32 +15,44 @@ namespace TSEmployeeProject.Pages.MainPage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPageDetail : ContentPage
     {
+        EmployeeList employees = new EmployeeList();
+
         public MainPageDetail()
         {
             InitializeComponent();
-
-            PageSetup();
         }
 
-        async void PageSetup()
+        protected override void OnAppearing()
         {
-            IsBusy = true;
-
-            EmployeeList employees = new EmployeeList
+            if (employees.Employees.Count == 0)
             {
-                Employees = await App.dataFactory.GetEmployeeList()
-            };
-
-            BindingContext = employees;
-
-            IsBusy = false;
+                RefreshEmployeeList();
+            }
         }
 
-        private async void ViewEmployee(object sender, SelectedItemChangedEventArgs e)
+        async void RefreshEmployeeList()
+        {
+            using (UserDialogs.Instance.Loading(null, null, null, true, MaskType.Black))
+            {
+                employees.Employees = await App.dataFactory.GetEmployeeList();
+
+                BindingContext = employees;
+            }
+        }
+
+        async void ViewEmployee(object sender, SelectedItemChangedEventArgs e)
         {
             Employee employee = ((ListView)sender).SelectedItem as Employee;
 
             await Navigation.PushModalAsync(new EmployeeViewPage(employee));
+
+            ((ListView)sender).SelectedItem = null;
+        }
+
+        void LogoutUser()
+        {
+            App.dataFactory.ResetLocalStorage();
+            App.Current.MainPage = new LoginPage();
         }
     }
 }

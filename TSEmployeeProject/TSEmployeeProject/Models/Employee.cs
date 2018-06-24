@@ -96,6 +96,6 @@ namespace TSEmployeeProject.Models
 
     public class EmployeeList
     {
-        public List<Employee> Employees { get; set; }
+        public List<Employee> Employees { get; set; } = new List<Employee>();
     }
 }
