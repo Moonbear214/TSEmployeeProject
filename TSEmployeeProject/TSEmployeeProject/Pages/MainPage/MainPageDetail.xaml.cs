@@ -15,7 +15,7 @@ namespace TSEmployeeProject.Pages.MainPage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPageDetail : ContentPage
     {
-        EmployeeList employees = new EmployeeList();
+        public EmployeeList employees = new EmployeeList();
 
         public MainPageDetail()
         {
@@ -49,10 +49,5 @@ namespace TSEmployeeProject.Pages.MainPage
             ((ListView)sender).SelectedItem = null;
         }
 
-        void LogoutUser()
-        {
-            App.dataFactory.ResetLocalStorage();
-            App.Current.MainPage = new LoginPage();
-        }
     }
 }

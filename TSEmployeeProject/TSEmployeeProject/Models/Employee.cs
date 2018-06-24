@@ -25,7 +25,7 @@ namespace TSEmployeeProject.Models
         public string GithubUser { get; set; }
 
         [JsonProperty("birth_date")]
-        public DateTimeOffset BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         [JsonProperty("gender")]
         public string Gender { get; set; }

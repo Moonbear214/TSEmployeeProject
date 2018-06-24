@@ -13,7 +13,7 @@ namespace TSEmployeeProject.Models
         public int Id { get; set; }
 
         [JsonProperty("date")]
-        public DateTimeOffset Date { get; set; }
+        public DateTime Date { get; set; }
 
         [JsonProperty("salary")]
         public string Salary { get; set; }

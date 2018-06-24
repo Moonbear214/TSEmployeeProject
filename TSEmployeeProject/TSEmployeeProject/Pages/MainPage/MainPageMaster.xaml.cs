@@ -49,5 +49,11 @@ namespace TSEmployeeProject.Pages.MainPage
             }
             #endregion
         }
+        
+        private void LogoutUser(object sender, EventArgs e)
+        {
+            App.dataFactory.ResetLocalStorage();
+            App.Current.MainPage = new LoginPage();
+        }
     }
 }

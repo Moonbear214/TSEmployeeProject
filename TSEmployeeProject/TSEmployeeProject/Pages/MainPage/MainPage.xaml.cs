@@ -16,7 +16,7 @@ namespace TSEmployeeProject.Pages.MainPage
     public partial class MainPage : MasterDetailPage
     {
         UserDetailed user;
-
+        
         public MainPage()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace TSEmployeeProject.Pages.MainPage
             }
             else if (item.Id == 1)
             {
-                await Navigation.PushModalAsync(new EmployeeStats());
+                await Navigation.PushModalAsync(new EmployeeStats(DetailPage.employees.Employees));
             }
 
             IsPresented = false;

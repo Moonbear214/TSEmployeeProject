@@ -45,10 +45,10 @@ namespace TSEmployeeProject.Models
         public string GithubUser { get; set; }
 
         [JsonProperty("birth_date")]
-        public DateTimeOffset BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         [JsonProperty("start_date")]
-        public DateTimeOffset StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
         [JsonProperty("end_date")]
         public object EndDate { get; set; }
@@ -129,7 +129,7 @@ namespace TSEmployeeProject.Models
         public int Age { get; set; }
 
         [JsonProperty("next_review")]
-        public DateTimeOffset NextReview { get; set; }
+        public DateTime NextReview { get; set; }
 
         [JsonProperty("days_to_birthday")]
         public int DaysToBirthday { get; set; }
