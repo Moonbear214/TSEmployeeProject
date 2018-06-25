@@ -32,7 +32,7 @@
                                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                                             <Label HorizontalOptions="Start" VerticalOptions="Start" Text="{Binding Name}" TextColor="MediumSeaGreen" />
-                                            <Label HorizontalOptions="End" VerticalOptions="End" Text="{Date, StringFormat='{0:dd/MM/yyyy}" />
+                                            <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" />
                                         </StackLayout>
                                     </StackLayout>
                                 </ViewCell>
