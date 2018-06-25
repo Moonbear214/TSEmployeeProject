@@ -71,7 +71,7 @@ namespace TSEmployeeProject.Factories
 
 
         /// <summary>
-        /// 
+        /// Returns list of all employees on server
         /// </summary>
         /// <returns></returns>
         public async Task<List<Employee>> GetEmployeeList()
@@ -81,7 +81,7 @@ namespace TSEmployeeProject.Factories
 
 
         /// <summary>
-        /// 
+        /// Returns all current user detail on server
         /// </summary>
         /// <returns></returns>
         public async Task<UserDetailed> GetCurrentUser()
@@ -91,7 +91,7 @@ namespace TSEmployeeProject.Factories
         
 
         /// <summary>
-        /// 
+        /// Clears local storage
         /// </summary>
         public void ResetLocalStorage()
         {

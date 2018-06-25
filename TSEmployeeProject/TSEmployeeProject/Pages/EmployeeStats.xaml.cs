@@ -34,6 +34,11 @@ namespace TSEmployeeProject.Pages
             this.BindingContext = StatsDiplay;
 		}
 
+        /// <summary>
+        /// Creates a list of all birthdays in this month
+        /// </summary>
+        /// <param name="employees"></param>
+        /// <returns></returns>
         List<BirthdayDisplayList> CurrentMonthBirthdays(List<Employee> employees)
         {
             List<BirthdayDisplayList> monthBirthdays = new List<BirthdayDisplayList>();

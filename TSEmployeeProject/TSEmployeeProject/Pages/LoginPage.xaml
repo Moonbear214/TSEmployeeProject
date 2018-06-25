@@ -4,32 +4,37 @@
              x:Class="TSEmployeeProject.Pages.LoginPage"
              BackgroundColor="AliceBlue">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="20">
 
             <Label HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    Text="Username" />
-            <Entry HorizontalOptions="FillAndExpand"
+            <Entry AutomationId="entUsername"
+                   HorizontalOptions="FillAndExpand"
                    VerticalOptions="CenterAndExpand" 
                    Placeholder="Username"
                    Text="{Binding Username}"/>
 
             <StackLayout HorizontalOptions="FillAndExpand"
                          VerticalOptions="CenterAndExpand"
-                         Padding="0,10,0,0">
+                         Padding="0,10">
                 <Label HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    Text="Password" />
-                <Entry HorizontalOptions="FillAndExpand"
+                <Entry AutomationId="entPassword"
+                   HorizontalOptions="FillAndExpand"
                    VerticalOptions="CenterAndExpand"
                    Placeholder="Password"
                    Text="{Binding Password}" />
             </StackLayout>
 
-            <Button HorizontalOptions="CenterAndExpand"
+            <Button AutomationId="btnLogin"
+                    HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"
+                    Margin="30,0"
+                    BackgroundColor="#03A9F4"
                     Text="Login"
                     Clicked="LoginUser"/>
 

@@ -25,15 +25,27 @@ namespace TSEmployeeProject.Pages
             this.BindingContext = loginDetails;
         }
 
+        /// <summary>
+        /// Checks if username and password is valid and shows toastr if not
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void LoginUser(object sender, EventArgs e)
         {
-            using (UserDialogs.Instance.Loading(null, null, null, true, MaskType.Black))
-            {
-                if (await App.dataFactory.UserLogin((LoginDetails)this.BindingContext))
-                    Application.Current.MainPage = new MainPage.MainPage();
-                else
-                    DependencyService.Get<IMessage>().ShortAlert("Wrong Credentials");
-            }
+            bool userValid = false;
+
+            if (!string.IsNullOrWhiteSpace(((LoginDetails)this.BindingContext).Username) || !string.IsNullOrWhiteSpace(((LoginDetails)this.BindingContext).Password))
+                using (UserDialogs.Instance.Loading(null, null, null, true, MaskType.Black))
+                {
+                    userValid = await App.dataFactory.UserLogin((LoginDetails)this.BindingContext);
+                }
+            else
+                DependencyService.Get<IMessage>().ShortAlert("Fields Missing");
+
+            if (userValid)
+                Application.Current.MainPage = new MainPage.MainPage();
+            else
+                DependencyService.Get<IMessage>().ShortAlert("Wrong Credentials");
         }
     }
 }

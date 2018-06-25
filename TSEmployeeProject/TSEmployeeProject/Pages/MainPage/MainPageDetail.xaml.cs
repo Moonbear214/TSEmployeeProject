@@ -40,6 +40,11 @@ namespace TSEmployeeProject.Pages.MainPage
             }
         }
 
+        /// <summary>
+        /// User selected an employee to view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void ViewEmployee(object sender, SelectedItemChangedEventArgs e)
         {
             Employee employee = ((ListView)sender).SelectedItem as Employee;

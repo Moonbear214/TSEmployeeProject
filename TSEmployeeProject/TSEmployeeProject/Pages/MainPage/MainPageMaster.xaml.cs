@@ -50,6 +50,11 @@ namespace TSEmployeeProject.Pages.MainPage
             #endregion
         }
         
+        /// <summary>
+        /// Logs out the user and clears local storage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LogoutUser(object sender, EventArgs e)
         {
             App.dataFactory.ResetLocalStorage();

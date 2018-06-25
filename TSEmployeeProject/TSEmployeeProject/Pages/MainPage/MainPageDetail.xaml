@@ -4,7 +4,7 @@
              x:Class="TSEmployeeProject.Pages.MainPage.MainPageDetail"
              Title="Employees">
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
-        <ListView x:Name="lwEmployees" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" ItemsSource="{Binding Employees}" ItemTapped="ViewEmployee">
+        <ListView x:Name="lwEmployees" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding Employees}" ItemTapped="ViewEmployee">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -97,7 +97,7 @@
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding NextReview, StringFormat='{0:dd/MM/yyyy}'}" />
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,15" BorderColor="LightSkyBlue" BorderWidth="3" Clicked="ViewReviewPicker" Text="Employee reviews" />
+                        <Button HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,15" BorderColor="LightSkyBlue" BackgroundColor="Transparent" BorderWidth="3" Clicked="ViewReviewPicker" Text="Employee reviews" />
                     </StackLayout>
                     <Picker x:Name="pckReviewPicker" Title="Employee reviews" SelectedIndexChanged="ReviewPicked" IsVisible="False" ItemsSource="{Binding EmployeeReview}" ItemDisplayBinding="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" />
 

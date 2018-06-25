@@ -51,7 +51,7 @@
             </ListView.Footer>
         </ListView>
 
-        <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#03A9F4" FontAttributes="Bold" TextColor="Black" Text="Log out" Clicked="LogoutUser" Margin="0,-10,0,0" />
+        <Button HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#03A9F4" FontAttributes="Bold" TextColor="Black" Text="Logout" Clicked="LogoutUser" Margin="0,-10,0,0" />
       
     </StackLayout>
 </ContentPage>
