@@ -30,7 +30,7 @@
                         FontAttributes="Bold"
                         FontSize="26"
                         Margin="5,0,0,0"
-                        Text="Boring Company"/>
+                        Text="Space X"/>
 
                 </Grid>
             </ListView.Header>
