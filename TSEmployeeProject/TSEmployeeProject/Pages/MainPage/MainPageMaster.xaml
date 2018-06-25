@@ -32,14 +32,6 @@
                         Margin="5,0,0,0"
                         Text="Boring Company"/>
 
-                    <!--<Label
-                        Grid.Column="1"
-                        Grid.Row="2"
-                        Grid.ColumnSpan="3"
-                        HorizontalOptions="CenterAndExpand"
-                        Style="{DynamicResource SubtitleStyle}"
-                        Text="Asdf"/>-->
-
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>

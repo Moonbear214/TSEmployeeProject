@@ -18,6 +18,10 @@
                         <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Number Of Employees" TextColor="MediumSeaGreen" />
                         <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding NumOfEmp}" />
                     </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Number of Avengers Members" TextColor="MediumSeaGreen" />
+                        <Label HorizontalOptions="End" VerticalOptions="End" Text="{Binding NumOfAverngers}" />
+                    </StackLayout>
                     
                     <!--A Listview that will display all the birthdays this month
                     (Listview is disabled to disable it's scrolling, allowing only the whole page to be scrolled)-->

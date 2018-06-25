@@ -22,11 +22,13 @@ namespace TSEmployeeProject.Pages
 			InitializeComponent ();
             
             StatsDiplay.NumOfEmp = employees.Count;
+            StatsDiplay.NumOfAverngers = employees.Where(empl => StatsDiplay.AverngersList.Contains(empl.User.FullNameDisplay)).Count();
             StatsDiplay.BirthdaysList = CurrentMonthBirthdays(employees);
             if (StatsDiplay.BirthdaysList.Count == 0)
                 StatsDiplay.BirthdaysList.Add(new BirthdayDisplayList()
                 {
                     Name = "No birthdays this month",
+                    Date = DateTime.Now
                 });
 
             this.BindingContext = StatsDiplay;
@@ -49,5 +51,5 @@ namespace TSEmployeeProject.Pages
 
             return monthBirthdays;
         }
-	}
+    }
 }

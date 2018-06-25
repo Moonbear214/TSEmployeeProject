@@ -8,7 +8,26 @@ namespace TSEmployeeProject.ViewModels
     {
         public int NumOfEmp { get; set; }
 
+        public int NumOfAverngers { get; set; }
+
         public List<BirthdayDisplayList> BirthdaysList { get; set; }
+
+        public List<string> AverngersList { get; set; }
+
+        public StatsDiplayModel()
+        {
+            AverngersList = new List<string>()
+            {
+                "Thor",
+                "Captain America",
+                "Iron Man",
+                "Hulk",
+                "Doctor Strange",
+                "Black Panther",
+                "Gary Player", // Would have been accepted if applied
+                "Black Panther"
+            };
+        }
     }
 
     public class BirthdayDisplayList
